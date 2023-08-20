@@ -2,7 +2,7 @@
 
 ## Projet Sport Ludique - Année scolaire 2023-2023
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+généré automatiquement avec githubpage et les github action à chaque push sur le referentiel github
 
 ## Commands
 
