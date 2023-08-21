@@ -4,103 +4,6 @@
 
 ## Lycée Fulbert Chartres 2023-2024
 
-## Table des matières
-
-[Dossier technique de l’infrastructure du réseau *SportLudique*
-[1](#dossier-technique-de-linfrastructure-du-réseau-sportludique)](#dossier-technique-de-linfrastructure-du-réseau-sportludique)
-
-[Lycée Fulbert Chartres 2020-2021
-[1](#lycée-fulbert-chartres-2023-2024)](#lycée-fulbert-chartres-2023-2024)
-
-[Introduction : [2](#introduction)](#introduction)
-
-[Rappel du contexte : [2](#rappel-du-contexte)](#rappel-du-contexte)
-
-[Présentation Générale de l’infrastructure :
-[2](#présentation-générale-de-linfrastructure)](#présentation-générale-de-linfrastructure)
-
-[L’Infrastructure réseau du lycée Fulbert simulant le réseau
-SportLudique
-[3](#linfrastructure-réseau-du-lycée-fulbert-simulant-le-réseau-sportludique)](#linfrastructure-réseau-du-lycée-fulbert-simulant-le-réseau-sportludique)
-
-[Etape préalable pour travailler sur le contexte SportLudique
-[3](#etape-préalable-pour-travailler-sur-le-contexte-sportludique)](#etape-préalable-pour-travailler-sur-le-contexte-sportludique)
-
-[Préfixe à utiliser dans les noms des VM sur la ferme
-[4](#préfixe-à-utiliser-dans-les-noms-des-vm-sur-la-ferme)](#préfixe-à-utiliser-dans-les-noms-des-vm-sur-la-ferme)
-
-[Login et password à utiliser
-[4](#login-et-password-à-utiliser)](#login-et-password-à-utiliser)
-
-[Les machines virtuelles à créer et à héberger sur la ferme de serveur
-sur chaque site (donc dans chaque VLAN d’îlot) :
-[4](#les-machines-virtuelles-à-créer-et-à-héberger-sur-la-ferme-de-serveur-sur-chaque-site-donc-dans-chaque-vlan-dîlot)](#les-machines-virtuelles-à-créer-et-à-héberger-sur-la-ferme-de-serveur-sur-chaque-site-donc-dans-chaque-vlan-dîlot)
-
-[L’Infrastructure réseau
-[6](#linfrastructure-réseau)](#linfrastructure-réseau)
-
-[Plan d’adressage IP [6](#plan-dadressage-ip)](#plan-dadressage-ip)
-
-[Les éléments du réseau
-[6](#les-éléments-du-réseau)](#les-éléments-du-réseau)
-
-[Infrastructure SportLudique (au siège à chartres)
-[7](#infrastructure-sportludique-au-siège-à-chartres)](#infrastructure-sportludique-au-siège-à-chartres)
-
-[Abonnements Internet pour chaque site
-[7](#abonnements-internet-pour-chaque-site)](#abonnements-internet-pour-chaque-site)
-
-[Abonnement Fibre : [7](#abonnement-fibre)](#abonnement-fibre)
-
-[Accès Internet et DMZ
-[8](#accès-internet-et-dmz)](#accès-internet-et-dmz)
-
-[Messagerie Electronique
-[8](#messagerie-electronique)](#messagerie-electronique)
-
-[Réseau WIFI [8](#réseau-wifi)](#réseau-wifi)
-
-[Supervision de réseau, Maintenance et déploiement
-[9](#supervision-de-réseau-maintenance-et-déploiement)](#supervision-de-réseau-maintenance-et-déploiement)
-
-[ANNEXE 1 - Schéma de l’infrastructure DE CHAQUE SITE
-[10](#_Toc50622457)](#_Toc50622457)
-
-[ANNEXE 2 - PLAN D’ADRESSAGE IP
-[11](#annexe-2---plan-dadressage-ip)](#annexe-2---plan-dadressage-ip)
-
-[ANNEXE 2 - PLAN D’ADRESSAGE IP des serveurs (suite)
-[13](#annexe-2---plan-dadressage-ip-des-serveurs-suite)](#annexe-2---plan-dadressage-ip-des-serveurs-suite)
-
-[Serveurs publiques (Internet simulé) et serveurs hébergés dans DMZ
-[13](#serveurs-publiques-internet-simulé-et-serveurs-hébergés-dans-dmz)](#serveurs-publiques-internet-simulé-et-serveurs-hébergés-dans-dmz)
-
-[ANNEXE 3 - Plan de brassage.
-[14](#annexe-3---plan-de-brassage.)](#annexe-3---plan-de-brassage.)
-
-[ANNEXE 4 - Identifiants & mots de passe
-[15](#annexe-4---identifiants-mots-de-passe)](#annexe-4---identifiants-mots-de-passe)
-
-[Annexe 5 - Infrastructure Publique simulée dans le labo du lycée
-Fulbert
-[16](#annexe-5---infrastructure-publique-simulée-dans-le-labo-du-lycée-fulbert)](#annexe-5---infrastructure-publique-simulée-dans-le-labo-du-lycée-fulbert)
-
-[Annexe 5 bis [17](#annexe-5-bis)](#annexe-5-bis)
-
-[Adressage IP publique des sites
-[17](#adressage-ip-publique-des-sites)](#adressage-ip-publique-des-sites)
-
-[Routeurs simulant internet dans l’infrastructure du lycée Fulbert
-[17](#routeurs-simulant-internet-dans-linfrastructure-du-lycée-fulbert)](#routeurs-simulant-internet-dans-linfrastructure-du-lycée-fulbert)
-
-[Annexe 6 [18](#annexe-6)](#annexe-6)
-
-[Model [19](#model)](#model)
-
-[SPEC [19](#spec)](#spec)
-
-[Features [19](#features)](#features)
-
 ## Introduction :
 
 Les Projets Personnels Encadrés (PPE) seront développés autour du
@@ -144,7 +47,7 @@ l’administration du réseau.
 
 Le nom de domaine *sportludique.fr* a été réservé auprès de l’AFNIC et
 le bureau d’enregistrement (registar) gérant ce nom de domaine est
-nordnet (en réalité il est géré par l’enseignant M MERY).
+nordnet (en réalité il est géré par l’enseignant M MERY et n'est donc pas accessible sur le web de chez vous).
 
 ## 
 
@@ -156,17 +59,16 @@ Le nom de domaine "**sportludique.fr**" est déjà déposé.
 
 -   **Nom de domaine :** sportludique.fr
 
--   **État :** Actif (consulter aussi le [**site
-    > web **](http://www.lyceefulbert.fr/))
+-   **État :** Actif
 
 -   **DNSSEC :** inactif
 
 -   **Bureau d'enregistrement
     > :** [**NORDNET**](http://www.afnic.fr/fr/produits-et-services/services/whois/)
 
--   **Date de création : **29 mai 2012 17:37
+-   **Date de création : **29 mai 2016 17:37
 
--   **Date d'expiration : **29 mai 2016 17:37
+-   **Date d'expiration : **29 mai 2026 17:37
 
 -   **Serveurs de noms (DNS)**
 
@@ -190,7 +92,7 @@ Le Switch SISR2 est relié à autre baie par l’intermédiaire du Switch HP
 par défaut sur un port associé au VLAN 217 (VLAN par défaut des
 deuxièmes années SISR).
 
-![](medias/infrastructure/image1.emf)
+![switch HP](medias/image1.png){ align=left }
 
 ### Etape préalable pour travailler sur le contexte SportLudique
 
