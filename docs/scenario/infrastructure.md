@@ -92,7 +92,7 @@ Le Switch SISR2 est relié à autre baie par l’intermédiaire du Switch HP
 par défaut sur un port associé au VLAN 217 (VLAN par défaut des
 deuxièmes années SISR).
 
-![switch HP](medias/image1.png){ align=left }
+![switch HP](../medias/infrastructure/image1.png){ align=left }
 
 ### Etape préalable pour travailler sur le contexte SportLudique
 
@@ -104,7 +104,8 @@ Le VLAN 200 est le VLAN Labo pour toute la promotion des deuxièmes
 années SISR. Le VLAN 210 est le VLAN Labo de l’ îlot 1. Le 220 celui de
 l’ îlot 2 etc…
 
-![](medias/infrastructure/image2.emf)
+![](../medias/infrastructure/image2.emf)
+![switch HP](../medias/infrastructure/image2.png){ align=left }
 
 Chaque site Chartres, Tours, Orléans et Châteauroux correspond à un îlot
 et possède donc son propre VLAN isolé du reste du réseau du Labo du
@@ -264,7 +265,7 @@ technologies à savoir Windows et Linux.
 -   Serveur http hébergeant de nombreux sites web à savoir dans le cas
     du site de chartres:
 
-    -   [www.chartres.sportludique.fr](http://www.chartres.sportludique.fr)
+    -   http://www.chartres.sportludique.fr
 
     -   intranet.chartres.sportludique.fr
 
@@ -547,7 +548,8 @@ par les équipes techniques.
 
 ## ANNEXE 1 - Schéma de l’infrastructure DE CHAQUE SITE
 
-![](medias/infrastructure/image3.emf)
+![](../medias/infrastructure/image3.emf)
+![switch HP](../medias/infrastructure/image3.png){ align=left }
 
 ## ANNEXE 2 - PLAN D’ADRESSAGE IP
 
@@ -1365,7 +1367,8 @@ SW1 2960-24</strong></td>
 
 ## Annexe 5 - Infrastructure Publique simulée dans le labo du lycée Fulbert
 
-![](medias/infrastructure/image4.emf)
+![](../medias/infrastructure/image4.emf)
+![switch HP](../medias/infrastructure/image4.png){ align=left }
 
 ##  Annexe 5 bis
 
@@ -1576,6 +1579,10 @@ SW1 2960-24</strong></td>
 
 **Les équipements de réseau**
 
+### DLINK 3200 AP
+
+![switch HP](../medias/infrastructure/image5.png){ align=left }
+<div style="clear:both;">
 <table>
 <colgroup>
 <col style="width: 27%" />
@@ -1585,9 +1592,7 @@ SW1 2960-24</strong></td>
 <tr class="header">
 <th><strong>DLINK 3200 AP</strong></th>
 <th><blockquote>
-<p><img src="medias/infrastructure/image5.png"
-style="width:2.73958in;height:1.54167in"
-alt="1%20DWL3200APB281600x1600" /></p>
+<p></p>
 </blockquote></th>
 </tr>
 </thead>
@@ -1653,7 +1658,13 @@ environnementaux peuvent restreindre le débit réel des données.</p></li>
 </tr>
 </tbody>
 </table>
+</div>
 
+### Routeurs Cisco
+
+![switch HP](../medias/infrastructure/image6.png){ align=left }
+
+<div style="clear:both;">
 <table>
 <colgroup>
 <col style="width: 36%" />
@@ -1663,8 +1674,7 @@ environnementaux peuvent restreindre le débit réel des données.</p></li>
 <tr class="header">
 <th><strong>Routeur Cisco</strong></th>
 <th><blockquote>
-<p><img src="medias/infrastructure/image6.png"
-style="width:3.97917in;height:1.86458in" /></p>
+<p></p>
 </blockquote></th>
 </tr>
 </thead>
@@ -1714,7 +1724,13 @@ Ethernet, and third-generation (3G) wireless.</p>
 </tr>
 </tbody>
 </table>
+</div>
 
+### Switch CISCO 2960
+
+![switch HP](../medias/infrastructure/image7.jpeg){ align=left }
+
+<div style="clear:both;">
 <table>
 <colgroup>
 <col style="width: 24%" />
@@ -1725,8 +1741,7 @@ Ethernet, and third-generation (3G) wireless.</p>
 <th><strong>Switch CISCO 2960<br />
 - 48 ports</strong></th>
 <th><blockquote>
-<p><img src="medias/infrastructure/image7.jpeg"
-style="width:4.9375in;height:0.91667in" alt="C2960-24TC-S" /></p>
+<p></p>
 </blockquote></th>
 </tr>
 </thead>
@@ -2010,3 +2025,4 @@ IEEE 802.1x, IEEE 802.1s, IEEE 802.3ah, IEEE 802.1ab (LLDP)</th>
 </tr>
 </tbody>
 </table>
+</div>
