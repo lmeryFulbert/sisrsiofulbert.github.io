@@ -1,8 +1,7 @@
 # Contexte SportLudique
 ## BTS SIO option SISR
 ## Année scolaire 2023-2024
-
-### Auteur: MERY Ludovic
+**Auteur :** Ludovic MERY
 
 ![switch HP](../medias/contexte/image1.png)
 
@@ -26,48 +25,16 @@ proposant des installations clé en main aux collectivités
 
 ## Données économiques et juridiques
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Dénomination sociale</th>
-<th>SportLudique</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Début d'activité : </td>
-<td>16/10/1995</td>
-</tr>
-<tr class="even">
-<td>Siret : </td>
-<td>347839493 00021</td>
-</tr>
-<tr class="odd">
-<td>Statut juridique</td>
-<td>SARL</td>
-</tr>
-<tr class="even">
-<td>Capital Social</td>
-<td>485 000 €</td>
-</tr>
-<tr class="odd">
-<td>Chiffre d’affaire 2014</td>
-<td>8 562 000 €</td>
-</tr>
-<tr class="even">
-<td>Benefice net 2014</td>
-<td>1 735 200 €</td>
-</tr>
-<tr class="odd">
-<td>Nombre d’employés</td>
-<td>452</td>
-</tr>
-</tbody>
-</table>
+| Dénomination sociale       | SportLudique      |
+|---------------------------|------------------|
+| Début d'activité :         | 16/10/1995       |
+| Siret :                   | 347839493 00021  |
+| Statut juridique          | SARL             |
+| Capital Social            | 485 000 €        |
+| Chiffre d’affaire 2014    | 8 562 000 €      |
+| Benefice net 2014         | 1 735 200 €      |
+| Nombre d’employés         | 452              |
+
 
 ## Organigramme
 
@@ -109,8 +76,6 @@ une forte croissance. SportLudique est composée de quatre domaines NT
 4.0 indépendants, un sur chaque site géographique, avec des relations
 d’approbation bidirectionnelles entre les sites.
 
-.
-
 Au fil des différents projets informatiques, dus à l’essor de son
 activité, des serveurs Windows 2000 Server et Windows Server 2003 ont
 été ajoutés afin d’apporter de la robustesse et des fonctionnalités,
@@ -121,9 +86,7 @@ Chaque site dispose de son propre service informatique (de
 l’administration au support des utilisateurs).
 
 Les utilisateurs sont administrateurs de leurs propres stations de
-travail : ils utilisent des applications
-
-bureautiques (style Office), graphiques ou maison, selon leurs
+travail : ils utilisent des applications bureautiques (style Office), graphiques ou maison, selon leurs
 activités.
 
 ### Détail de l’infrastructure par site
@@ -493,46 +456,18 @@ réduction des coûts, la sécurisation et la réactivité du SI.
 
 Exemples :
 
-<table>
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 70%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Réduction des couts</th>
-<th><p>allègement de la charge de travail du centre d’appels, par un</p>
-<p>contrôle total de l’environnement de travail de l’utilisateur, et</p>
-<p>donc recentrage des compétences et des champs</p>
-<p>d’interventions des techniciens.</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>sécurisation</td>
-<td><p>contrôle total de l’environnement de travail : les utilisateurs
-ne</p>
-<p>pourront être vecteurs d’intrusion de virus par des</p>
-<p>téléchargements malveillants, des clés USB...</p></td>
-</tr>
-<tr class="even">
-<td>Réactivité du SI</td>
-<td><p>réduction du temps de mise à jour des nouvelles versions des</p>
-<p>logiciels applicatifs</p></td>
-</tr>
-<tr class="odd">
-<td>Développement durable</td>
-<td>limitation des éditions papier, de la consommation d'énergie…</td>
-</tr>
-</tbody>
-</table>
+| Réduction des coûts       | allègement de la charge de travail du centre d’appels, par un contrôle total de l’environnement de travail de l’utilisateur, et donc recentrage des compétences et des champs d’interventions des techniciens. |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sécurisation              | contrôle total de l’environnement de travail : les utilisateurs ne pourront être vecteurs d’intrusion de virus par des téléchargements malveillants, des clés USB...   |
+| Réactivité du SI          | réduction du temps de mise à jour des nouvelles versions des logiciels applicatifs                                                                                     |
+| Développement durable     | limitation des éditions papier, de la consommation d'énergie…                                                                                                           |
+
 
 -   Le deuxième objectif visé est d’offrir une plus grande disponibilité
     de l’infrastructure, des serveurs et des stations de travail : cela
     participera également à la réduction des coûts. Tout doit être mis
     en œuvre pour simplifier l’accès aux données et accroître la
-    productivité de l’utilisateur en lui assurant une haute
-    disponibilité au SI.
+    productivité de l’utilisateur en lui assurant une haute disponibilité au SI.
 
 -   Le troisième objectif portera sur l’industrialisation des
     installations des stations de travail et des serveurs, l’uniformité
@@ -546,13 +481,10 @@ chateauroux de deux façons :
 
 \- Soit comme un partenaire communiquant avec *SportLudique*,
 
-\- Soit comme faisant partie intégrante de l’infrastructure de
-*SportLudique*.
+\- Soit comme faisant partie intégrante de l’infrastructure de *SportLudique*.
 
 La direction souhaitant absorber juridiquement cette filliale, il paraît
-évident de l’absorber dans la
-
-l’infrastructure de *SportLudique* tout en conservant ses spécificités:
+évident de l’absorber dans la l’infrastructure de *SportLudique* tout en conservant ses spécificités:
 
 Il en découle que l’entreprise sera réorganisée de la façon suivante :
 
@@ -567,9 +499,7 @@ Il en découle que l’entreprise sera réorganisée de la façon suivante :
 #### Choix de la solution d’infrastructure organisationnelle
 
 Les serveurs d’infrastructure auront les rôles de services réseaux, tels
-que DNS, WINS, DHCP, Active
-
-Directory et serveur de catalogue global.
+que DNS, WINS, DHCP, Active Directory et serveur de catalogue global.
 
 La DSI a retenu la mise en œuvre d’un annuaire Active Directory basé sur
 un modèle de forêt unique.
@@ -625,13 +555,11 @@ sur chaque machine.
 
 Pour cela, deux actions de base devront être mises en place :
 
-Les serveurs seront installés à partir de techniques dites silencieuses,
-avec des fichiers de réponses.
+* Les serveurs seront installés à partir de techniques dites silencieuses, avec des fichiers de réponses.
 
-Les stations de travail seront industrialisées avec l’installation des
+* Les stations de travail seront industrialisées avec l’installation des
 Service Packs et autres. Les postes utilisateurs seront préconfigurés
-avec les logiciels nécessaires au fonctionnement de la station de
-travail de base.
+avec les logiciels nécessaires au fonctionnement de la station de travail de base.
 
 Les outils de gestion de parc et de supervision de réseau devront donc
 être étudiés et mis en place, afin de rationaliser les interventions du
@@ -739,7 +667,3 @@ Il s’agit entre autre, d’isoler l’activité de recherche et de
 développement du site d’Orléans et de crypter les données sensibles. Les
 techniques de VLAN, de DMZ, de VPN et de cryptage des données seront
 privilégiées.
-
-## Schéma de liaisons distantes souhaitées dans un second temps.
-
-![](../medias/contexte/image6.png){ align=left }
