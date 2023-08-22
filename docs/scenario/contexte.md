@@ -130,311 +130,100 @@ activités.
 
 #### Site de chartres (siège social)
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Nombre d’utilisateurs</th>
-<th>132</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nombres de stations de travail</td>
-<td>132</td>
-</tr>
-<tr class="even">
-<td>fixes</td>
-<td>100</td>
-</tr>
-<tr class="odd">
-<td>portables</td>
-<td>12</td>
-</tr>
-<tr class="even">
-<td>Nombre de serveurs</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
+| Nombre d’utilisateurs      | 132 |
+|---------------------------|-----|
+| Nombres de stations de travail | 132 |
+| fixes                     | 100 |
+| portables                 | 12  |
+| Nombre de serveurs        | 10  |
 
 #### Site d’Orléans
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Nombre d’utilisateurs</th>
-<th>60</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nombres de stations de travail</td>
-<td>83</td>
-</tr>
-<tr class="even">
-<td>fixes</td>
-<td>80</td>
-</tr>
-<tr class="odd">
-<td>portables</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>Nombre de serveurs</td>
-<td>11</td>
-</tr>
-</tbody>
-</table>
+| Nombre d’utilisateurs      | 60  |
+|---------------------------|-----|
+| Nombres de stations de travail | 83  |
+| fixes                     | 80  |
+| portables                 | 3   |
+| Nombre de serveurs        | 11  |
 
 #### Site de Tours 
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Nombre d’utilisateurs</th>
-<th>179</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nombres de stations de travail</td>
-<td>95</td>
-</tr>
-<tr class="even">
-<td>fixes</td>
-<td>90</td>
-</tr>
-<tr class="odd">
-<td>portables</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>Nombre de serveurs</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
+| Nombre d’utilisateurs      | 179 |
+|---------------------------|-----|
+| Nombres de stations de travail | 95  |
+| fixes                     | 90  |
+| portables                 | 5   |
+| Nombre de serveurs        | 10  |
 
 #### Site de chateauroux 
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 49%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Nombre d’utilisateurs</th>
-<th>81</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nombres de stations de travail</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td>fixes</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>portables</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>Nombre de serveurs</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
+| Nombre d’utilisateurs      | 81  |
+|---------------------------|-----|
+| Nombres de stations de travail | 50  |
+| fixes                     | 40  |
+| portables                 | 10  |
+| Nombre de serveurs        | 3   |
+
 
 ###  Détails des équipements serveurs par site
 
 Site de Chartres
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 38%" />
-<col style="width: 35%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Nom</strong></th>
-<th><strong>Fonction</strong></th>
-<th><strong>OS</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>CHA_DC_01</strong></td>
-<td><p>Contrôleur principal de domaine<br />
-Serveur primaire DNS</p>
-<p>Serveur DHCP</p>
-<p>Serveur de fichiers</p></td>
-<td><p>Windows server 2008 R2</p>
-<p>Domaine :<br />
-chartres.local</p></td>
-</tr>
-<tr class="even">
-<td><strong>CHA_DC_02</strong></td>
-<td><p>Contrôleur secondaire de domaine</p>
-<p>Serveur secondaire DNS</p>
-<p>Serveur de fichiers repliqué</p></td>
-<td>Windows server 2008 R2</td>
-</tr>
-<tr class="odd">
-<td><strong>SL_BDD</strong></td>
-<td>Serveur de base de données</td>
-<td>Linux Debian 8 + MySQL</td>
-</tr>
-<tr class="even">
-<td><strong>SL_OCS</strong></td>
-<td>Serveur d’inventaire</td>
-<td>Linux Debian 8 + OCS Inventory</td>
-</tr>
-<tr class="odd">
-<td><strong>…</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Nom**        | **Fonction**                               | **OS**                    |
+|----------------|--------------------------------------------|--------------------------|
+| **CHA_DC_01**  | Contrôleur principal de domaine            | Windows server 2008 R2   |
+|                | Serveur primaire DNS                       | Domaine : chartres.local |
+|                | Serveur DHCP                               |                          |
+|                | Serveur de fichiers                        |                          |
+| **CHA_DC_02**  | Contrôleur secondaire de domaine           | Windows server 2008 R2   |
+|                | Serveur secondaire DNS                     |                          |
+|                | Serveur de fichiers repliqué               |                          |
+| **SL_BDD**     | Serveur de base de données                | Linux Debian 8 + MySQL   |
+| **SL_OCS**     | Serveur d’inventaire                      | Linux Debian 8 + OCS Inventory |
+| **…**          |                                            |                          |
+
 
 Site d’Orléans
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 38%" />
-<col style="width: 35%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Nom</strong></th>
-<th><strong>Fonction</strong></th>
-<th><strong>OS</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>ORL_DC_01</strong></td>
-<td><p>Contrôleur principal de domaine<br />
-Serveur primaire DNS</p>
-<p>Serveur DHCP</p>
-<p>Serveur de fichiers</p></td>
-<td><p>Windows server 2008 R2</p>
-<p>Domaine :<br />
-orleans.local</p></td>
-</tr>
-<tr class="even">
-<td><strong>ORL_DC_02</strong></td>
-<td><p>Contrôleur secondaire de domaine</p>
-<p>Serveur secondaire DNS</p>
-<p>Serveur de fichiers repliqué</p></td>
-<td>Windows server 2008 R2</td>
-</tr>
-<tr class="odd">
-<td><strong>…</strong></td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
+| **Nom**        | **Fonction**                               | **OS**                    |
+|----------------|--------------------------------------------|--------------------------|
+| **ORL_DC_01**  | Contrôleur principal de domaine            | Windows server 2008 R2   |
+|                | Serveur primaire DNS                       | Domaine : orleans.local  |
+|                | Serveur DHCP                               |                          |
+|                | Serveur de fichiers                        |                          |
+| **ORL_DC_02**  | Contrôleur secondaire de domaine           | Windows server 2008 R2   |
+|                | Serveur secondaire DNS                     |                          |
+|                | Serveur de fichiers repliqué               |                          |
+| **…**          | …                                          | …                        |
+
 
 Site de Tours
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 40%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Nom</strong></th>
-<th><strong>Fonction</strong></th>
-<th><strong>OS</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>TRS_DC_01</strong></td>
-<td><p>Contrôleur principal de domaine<br />
-Serveur primaire DNS</p>
-<p>Serveur DHCP</p>
-<p>Serveur de fichiers</p></td>
-<td><p>Windows server 2008 R2</p>
-<p>Domaine :</p>
-<p>tours.local</p></td>
-</tr>
-<tr class="even">
-<td><strong>TRS_DC_02</strong></td>
-<td><p>Contrôleur secondaire de domaine</p>
-<p>Serveur secondaire DNS</p>
-<p>Serveur de fichiers repliqué</p></td>
-<td>Windows server 2008 R2</td>
-</tr>
-<tr class="odd">
-<td><strong>…</strong></td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
+| **Nom**        | **Fonction**                               | **OS**                    |
+|----------------|--------------------------------------------|--------------------------|
+| **TRS_DC_01**  | Contrôleur principal de domaine            | Windows server 2008 R2   |
+|                | Serveur primaire DNS                       | Domaine : tours.local    |
+|                | Serveur DHCP                               |                          |
+|                | Serveur de fichiers                        |                          |
+| **TRS_DC_02**  | Contrôleur secondaire de domaine           | Windows server 2008 R2   |
+|                | Serveur secondaire DNS                     |                          |
+|                | Serveur de fichiers repliqué               |                          |
+| **…**          | …                                          | …                        |
+
 
 Site de Chateauroux
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 40%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Nom</strong></th>
-<th><strong>Fonction</strong></th>
-<th><strong>OS</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>CHX_DC_01</strong></td>
-<td><p>Contrôleur principal de domaine<br />
-Serveur primaire DNS</p>
-<p>Serveur DHCP</p>
-<p>Serveur de fichiers</p></td>
-<td><p>Windows server 2008 R2</p>
-<p>Domaine :</p>
-<p>chateauroux.local</p></td>
-</tr>
-<tr class="even">
-<td><strong>CHX_DC_02</strong></td>
-<td><p>Contrôleur secondaire de domaine</p>
-<p>Serveur secondaire DNS</p>
-<p>Serveur de fichiers repliqué</p></td>
-<td>Windows server 2008 R2</td>
-</tr>
-<tr class="odd">
-<td><strong>…</strong></td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
+| **Nom**        | **Fonction**                               | **OS**                    |
+|----------------|--------------------------------------------|--------------------------|
+| **CHX_DC_01**  | Contrôleur principal de domaine            | Windows server 2008 R2   |
+|                | Serveur primaire DNS                       | Domaine : chateauroux.local |
+|                | Serveur DHCP                               |                          |
+|                | Serveur de fichiers                        |                          |
+| **CHX_DC_02**  | Contrôleur secondaire de domaine           | Windows server 2008 R2   |
+|                | Serveur secondaire DNS                     |                          |
+|                | Serveur de fichiers repliqué               |                          |
+| **…**          | …                                          | …                        |
+
 
 ##  Topologie physique sur le site de chartres
 
