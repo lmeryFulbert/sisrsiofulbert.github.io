@@ -8,26 +8,19 @@ Le déploiement de postes de travail est une étape essentielle dans la gestion 
 
 ### Déploiement sur des Parcs de Machines Hétérogènes et Homogènes
 
-#### Parcs de Machines Hétérogènes
 
 ??? info "Définition"
     Un parc de machines **hétérogènes** regroupe des ordinateurs avec des configurations matérielles variées.
+    Un parc de machines **homogènes** regroupe des ordinateurs avec des configurations matérielles similaires.
 
 
-|                   | Avantages                                                   | Inconvénients                                                                                                    |
-|-------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| **Parcs de Machines Hétérogènes** | - Flexibilité pour gérer différents types de matériel. <br/> - Possibilité d'optimiser les ressources en fonction des besoins. | - Complexité accrue dans la gestion et la maintenance.<br/> - Problématique des pilotes (drivers) :<br/>   - Les différentes machines peuvent nécessiter des pilotes spécifiques.<br/>   - Gestion des pilotes multiples pour différentes configurations.<br/>   - Risque de conflits ou d'incompatibilités de pilotes. |
-
-
-
-#### Parcs de Machines Homogènes
-
-??? info "Définition"
-    Définition : Un parc de machines **homogènes** regroupe des ordinateurs avec des configurations matérielles similaires.
-
-|                   | Avantages                                                   | Inconvénients                                                                                                    |
-|-------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| **Parcs de Machines Hétérogènes** | - Flexibilité pour gérer différents types de matériel. <br/> - Possibilité d'optimiser les ressources en fonction des besoins. | - Complexité accrue dans la gestion
+|                   | Parcs de Machines Homogènes                                  | Parcs de Machines Hétérogènes                             |
+|-------------------|-------------------------------------------------------------|------------------------------------------------------------|
+| **Avantages**     | - Facilité de gestion et de maintenance.                    | - Flexibilité pour gérer différents types de matériel.    |
+|                   | - Réduction des incompatibilités matérielles.              | - Possibilité d'optimiser les ressources en fonction des besoins. |
+|                   |                                                             |                                                            |
+| **Inconvénients** | - Limitation dans la diversité des matériels pris en charge. | - Complexité accrue dans la gestion et la maintenance.  |
+|                   |                                                             | - Problématique des pilotes (drivers) :   - Les différentes machines peuvent nécessiter des pilotes spécifiques.   - Gestion des pilotes multiples pour différentes configurations.   - Risque de conflits ou d'incompatibilités de pilotes. |
 
 
 ### Spécificités de Windows et Préparation du système
