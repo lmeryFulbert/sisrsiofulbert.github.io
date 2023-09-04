@@ -55,15 +55,15 @@ Les capacités physiques des serveurs qui hébergent vos machines virtuelles ne 
 
 ### Login et password non sécurisé à posséder
 
-| Microsoft Windows      | administrateur / Azerty1234      |
+| Microsoft Windows      | administrateur / P@ssw0rd123456!      |
 |------------------------|----------------------------------|
 | Serveur                | nomuser / nomuser (géré dans l’annuaire AD) |
 | Stations               |                                  |
 
-| Distribution linux     | root / Azerty1234                |
+| Distribution linux     | root /   P@ssw0rd123456!              |
 |------------------------|----------------------------------|
-| Switch / Routeurs      | admin / Azerty1234              |
-| Mode privilégié (enable)| Azerty1234                       |
+| Switch / Routeurs      | admin / P@ssw0rd123456!              |
+| Mode privilégié (enable)| P@ssw0rd123456!                       |
 
 Il vous sera demandé de créer d'autres comptes plus personnalisés, qui seront par ailleurs gérés par un bastion d'accès. Ces comptes vous offriront un moyen d'accéder à votre infrastructure en cas de panne générale, ce qui les rend similaires à des portes dérobées indispensables pour vos activités d'apprentissage. 
 
