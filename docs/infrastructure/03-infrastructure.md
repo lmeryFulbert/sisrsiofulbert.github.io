@@ -101,7 +101,7 @@ compromettre la sécurité du SI.
 
 ### Plan d’adressage IP 
 
-Le réseau général est construit autour de l’adresse **172.16.0.0** avec un
+Le réseau général est construit autour de l’adresse **172.28.0.0** avec un
 masque de **16 bits**. Ceci permet de couvrir l’ensemble du plan d’adressage
 de l’entreprise mais aussi pour les évolutions. L’administrateur vous
 demande de réfléchir aux découpages en sous réseau pour sécuriser les
