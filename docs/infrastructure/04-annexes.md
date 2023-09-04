@@ -133,8 +133,7 @@
 
 ## Annexe 5 - Infrastructure Publique simulée dans le labo du lycée Fulbert
 
-![](../medias/infrastructure/image4.emf)
-![switch HP](../medias/infrastructure/image4.png){ align=left }
+![switch HP](../medias/infrastructure/image4.png)
 
 ##  Annexe 5 bis
 
