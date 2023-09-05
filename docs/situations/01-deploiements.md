@@ -93,15 +93,15 @@ En résumé, les options DHCP 66 et 67 sont couramment utilisées dans les dépl
 
 ### Creation du fichier de réponse (avec ADK)
 
-![](../medias/situations/01-deploy/menu_windows.png)
+![](../medias/situations/01-deploy/menu_windows.PNG)
 
-![](../medias/situations/01-deploy/response1.png)
+![](../medias/situations/01-deploy/response1.PNG)
 
-![](../medias/situations/01-deploy/response2.png)
+![](../medias/situations/01-deploy/response2.PNG)
 
-![](../medias/situations/01-deploy/response3.png)
+![](../medias/situations/01-deploy/response3.PNG)
 
-![](../medias/situations/01-deploy/response4.png)
+![](../medias/situations/01-deploy/response4.PNG)
 
 ### FOG
 
