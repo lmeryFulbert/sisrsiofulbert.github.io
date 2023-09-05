@@ -90,6 +90,19 @@ La valeur de cette option est donc dépendante de la solution de deploiement cho
 En résumé, les options DHCP 66 et 67 sont couramment utilisées dans les déploiements réseau pour fournir aux clients DHCP les informations nécessaires pour amorcer des systèmes à partir de la carte réseau ou effectuer des opérations de configuration spécifiques à partir d'un serveur TFTP. Ces options sont essentielles dans les environnements de déploiement et de gestion de parc informatique.
 
 ## Mise en place de FOG et WDS
+
+### Creation du fichier de réponse (avec ADK)
+
+![](../medias/situations/01-deploy/menu_windows.png)
+
+![](../medias/situations/01-deploy/response1.png)
+
+![](../medias/situations/01-deploy/response2.png)
+
+![](../medias/situations/01-deploy/response3.png)
+
+![](../medias/situations/01-deploy/response4.png)
+
 ### FOG
 
     Le meilleur compte rendu sera publié ici
