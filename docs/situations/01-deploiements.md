@@ -91,6 +91,14 @@ En résumé, les options DHCP 66 et 67 sont couramment utilisées dans les dépl
 
 ## Mise en place de FOG et WDS
 
+Pour capturer une image d'un Master avec FOG il est nécessaire de générer avant sur le master un fichier de réponse XML. Ce fichier ce génère avec l'outil gratuit fourni par Microsoft ADK.
+
+Il permet de sauter les différentes étapes de personnalisation de l'installation et d'automatiser les réponses (choix du clavier, création d'un compte utilisateur etc...) de windows nottament pour l'Out Of Box Experience (Experience de sortie de carton quand windows est préinstallé sur la machine, donc au premier démarrage de la machine).
+
+Vous trouverez ci joint un exemple de configuration fonctionnelle permettant de générer un fichier de réponse valide (Win 10 Education pro).
+
+A noter qu'il est indispensable de copier le fichier install.wim issue de l'iso sur le poste Master.
+
 ### Creation du fichier de réponse (avec ADK)
 
 ![](../medias/situations/01-deploy/menu_windows.PNG)
@@ -103,11 +111,16 @@ En résumé, les options DHCP 66 et 67 sont couramment utilisées dans les dépl
 
 ![](../medias/situations/01-deploy/response4.PNG)
 
-### FOG
+### FOG + ADK
 
     Le meilleur compte rendu sera publié ici
 
-### WDS
+### WDS + MDT
+
+WDS ne se base pas sur un poste Master, l'image install.wim est stocké sur le serveur de déploiement.
+La personnalisation du fichier de réponse se fait via l'usage de MDT lui aussi installé sur le serveur de déploiement (WDS). Le logiciel ADK est donc inutile lors de l'utilisation de WDS.
+
+**A noter:** Le service WDS intègre son propre service DHCP, qui n'est pas le service DHCP classique de windows serveur.
 
     Le meilleur compte rendu sera publié ici
 
