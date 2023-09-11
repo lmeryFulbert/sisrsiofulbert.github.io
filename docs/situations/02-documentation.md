@@ -153,7 +153,7 @@ Pour déployer automatiquement votre site MkDocs sur GitHub Pages en utilisant G
 
 ou via github, créer un workflow personnalisé:
 
-![](../medias/situations/02-documentation/capture.png)
+![](../medias/situations/02-documentation/capture2.png)
 
 ```yaml
 name: ci 
