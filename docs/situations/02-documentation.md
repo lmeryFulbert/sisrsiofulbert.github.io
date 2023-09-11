@@ -26,6 +26,10 @@ GitHub Pages est un service d'hébergement de sites web statiques proposé par G
 
 En résumé, GitHub Pages est un service d'hébergement de sites web statiques offert par GitHub, qui simplifie la publication de sites web en utilisant Git pour le suivi des versions et la gestion des fichiers. C'est une option populaire pour les développeurs et les projets open source qui souhaitent partager leur contenu en ligne de manière efficace et gratuite.
 
+### Rappel workflow git
+
+![](../medias/situations/02-documentation/git.webp)
+
 ## mkdocs
 
 MkDocs est un générateur de site web statique populaire conçu spécialement pour la création de documentation technique et de sites web de projet. Il est écrit en Python et est particulièrement apprécié par les développeurs, les équipes de projet, et les rédacteurs techniques pour sa simplicité, sa flexibilité et sa facilité d'utilisation. Voici quelques points clés à connaître à propos de MkDocs :
