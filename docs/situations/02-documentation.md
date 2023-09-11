@@ -186,13 +186,22 @@ jobs:
 
 Assurez-vous de personnaliser le fichier YAML selon vos besoins. Ce fichier YAML définit une action qui se déclenche lorsqu'un push est effectué sur la branche principale (main), construit le site MkDocs, et déploie le site sur GitHub Pages.
 
-**Étape 2 : Configuration des secrets**
+**Étape 2 : Configuration des autorisations d'autres utilisateurs**
 
-Pour que l'action puisse déployer sur GitHub Pages, vous devez définir deux secrets dans les paramètres de votre dépôt GitHub :
+Si vous souhaitez autoriser plusieurs utilisateurs à collaborer sur un seul dépôt GitHub tout en gérant leurs autorisations, GitHub offre plusieurs mécanismes pour y parvenir. Voici comment vous pouvez configurer les autorisations pour plusieurs utilisateurs sur un dépôt GitHub :
 
-1. `ACTIONS_DEPLOY_ACCESS_TOKEN` : Un jeton d'accès personnel avec les autorisations nécessaires pour déployer sur le dépôt. Vous pouvez générer un tel jeton dans les paramètres de votre compte GitHub.
+1. Collaborateurs du dépôt :
 
-2. `PAGES_BRANCH` : La branche sur laquelle vous souhaitez déployer votre site (par exemple, `gh-pages`).
+    Les collaborateurs d'un dépôt ont un accès en écriture au dépôt. Vous pouvez les ajouter directement au dépôt avec le rôle de collaborateur.
+
+    Pour ajouter un collaborateur :
+        Accédez à la page de votre dépôt GitHub.
+        Cliquez sur l'onglet "Settings" (Paramètres) en haut à droite.
+        Dans le menu de gauche, cliquez sur "Manage access" (Gérer l'accès).
+        Cliquez sur le bouton "Invite a collaborator" (Inviter un collaborateur).
+        Saisissez le nom d'utilisateur, l'adresse e-mail ou le nom complet du collaborateur, puis cliquez sur "Add collaborator" (Ajouter un collaborateur).
+
+    Les collaborateurs ajoutés de cette manière ont généralement des droits en écriture sur le dépôt, ce qui signifie qu'ils peuvent pousser des modifications vers le dépôt.
 
 **Étape 3 : Activation de l'action**
 
