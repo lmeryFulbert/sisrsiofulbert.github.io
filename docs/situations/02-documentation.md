@@ -1,4 +1,4 @@
-# 02-Documentation
+# Situation 2 - Documentation
 
 Cette année le choix technique pour gérer la documentation technique de vos projets est basé sur l'utilisation des github pages et de l'outils mkdocs, outil populaire pour générer de la documentation.
 
@@ -147,9 +147,9 @@ Pour déployer automatiquement votre site MkDocs sur GitHub Pages en utilisant G
 
 3. À l'intérieur du répertoire `workflows`, créez un fichier YAML (par exemple, `deploy.yml`) pour définir votre action. Voici un exemple de contenu pour ce fichier :
 
-ou via github, créer un workflow personnélisé:
+ou via github, créer un workflow personnalisé:
 
-![](../medias/situations/02-documentation/capture.PNG)
+![](../medias/situations/02-documentation/capture.png)
 
 ```yaml
 name: ci 
