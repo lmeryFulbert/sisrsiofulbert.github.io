@@ -193,10 +193,10 @@ GTR 4heures pour l’abonnement principal Fibre et un contrat bas débit
 ASDL GTR 48Heures pour l’abonnement de secours.
 
 
-|                        | **Chartres**      | **Tours**        | **Orléans**      | **Chateauroux**  |
+|             |    **idVLAN**       | **Chartres**      | **Tours**        | **Orléans**      | **Chateauroux**  |
 |------------------------|-------------------|------------------|------------------|------------------|
-| Abonnement **FIBRE** :  | 183.44.128.2 /30  | 183.44.137.2 /30 | 183.44.145.2 /30 | 183.44.136.2 /30 |
-| Abonnement **ADSL** :     | 221.87.28.1 /30   | 221.87.37.1 /30  | 221.87.45.1 /30  | 221.87.36.1 /30  |
+| Abonnement **FIBRE** :| 200  | 183.44.128.2 /30  | 183.44.137.2 /30 | 183.44.145.2 /30 | 183.44.136.2 /30 |
+| Abonnement **ADSL** : | 100    | 221.87.28.1 /30   | 221.87.37.1 /30  | 221.87.45.1 /30  | 221.87.36.1 /30  |
 
 
 ### Accès Internet et DMZ
