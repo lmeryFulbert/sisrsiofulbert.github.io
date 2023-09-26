@@ -1,7 +1,5 @@
 # Fiche de Recette 
 
-## Test d'Accès à Internet
-
 ## Objectif
 Cette fiche de recette vise à tester l'accès à Internet depuis plusieurs niveaux du réseau en prenant en compte les 4 couches du modèle TCP/IP : ICMP, DNS, et les services. Les tests seront effectués à cinq emplacements différents : routeur de jonction, VLAN de transport, DMZ, cœur du réseau, et VLAN serveurs et usagers.
 
