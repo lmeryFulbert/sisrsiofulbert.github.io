@@ -93,11 +93,9 @@ Supposons que vous ayez deux VLANs spécifiques, VLAN 10 et VLAN 20, que vous so
 Configuration du port du commutateur en mode trunk avec les VLANs autorisés :
 
 ```bash
-
 interface GigabitEthernet0/1
  switchport mode trunk
  switchport trunk allowed vlan 10,20
-
  ```
 
 Dans cette configuration :
