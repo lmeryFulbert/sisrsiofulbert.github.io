@@ -121,3 +121,81 @@ view "externe" {
 ```
 
 Dans cet exemple, les utilisateurs provenant du réseau local (192.168.1.0/24) verront une vue DNS définie par le fichier /etc/bind/db.interne, tandis que les utilisateurs externes verront une vue définie par le fichier /etc/bind/db.externe.
+
+## Exemple de configuration
+
+### Resolveur DNS
+
+#### Fichier /etc/bind/named.conf.options
+```shell
+    options {
+            directory "/var/cache/bind";
+
+            //Autorise les requetes recursives
+            recursion yes;  
+
+            //Liste des réseaux autorisés à interoger le resolver
+            //Par defaut seul les équipements du meme réseau IP que le serveur peuvent l'interroger.
+            allow-query { 
+                172.x.0.0/24;       //LAN
+                127.0.0.1;          //LOCALHOST
+                192.168.x.0/24;    //DMZ
+            };
+
+            //Configuration du redirecteur
+            //Le domaine sportludique n'étant pas acheté reelement ,il faut interroger le redirecteur quand le domaine n'est pas trouvé sur les serveur racine
+            forwarders {
+                    121.183.90.205;     //IP resolver enseignant
+            };
+
+            //Desactivation de DNSSec
+            dnssec-validation no;
+
+            //Ecoute sur l'ensemble des interfaces IPv4
+            listen-on { any; };
+    };
+```
+
+### Serveur DNS ayant autorité sur la zone ville.sportludique.fr
+
+#### Fichier /etc/bind/named.conf.local
+
+```shell
+    
+    //zone externe
+    view "outside" {
+        match-clients { 
+            !172.x.x.0/24;    //requète de provenant pas du LAN
+            !192.168.x.0/24;    //requète de provenant pas de la DMZ
+            any;                //Toutes les autres adresses
+        };
+
+        zone "ville.sportludique.fr." {
+            type master;
+            file "/etc/bind/db.ville.sp.fr.externe";
+        };
+    };
+
+    view "inside" {
+
+        match-clients { 
+            172.x.0.0/24;    //requète provenant du LAN
+            192.168.x.0/24;    //requète provenant de la DMZ
+        };
+
+        zone "chartres.sportludique.fr." {
+            type master;
+            file "/etc/bind/db.ville.sp.fr.interne";
+        };
+
+    };
+
+```
+
+??? info "Attention"
+    Toutes les lignes du fichier `named.conf.default-zones` doivent être mises `en commentaire` car ne elles ne sont associées à aucune vue. 
+
+
+
+
+
