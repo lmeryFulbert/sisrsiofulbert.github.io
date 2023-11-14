@@ -10,6 +10,8 @@ La **virtualisation** et la **containerisation** sont deux approches différente
 
 - **Containerisation** : La containerisation utilise des conteneurs légers pour isoler les applications. Chaque conteneur partage le même noyau d'OS que l'hôte, ce qui les rend plus légers et plus rapides à démarrer.
 
+![](../medias/cours/docker/virtu_vs_container.png)
+
 ## Installation de Docker
 
 Pour installer Docker, suivez les instructions de la documentation officielle selon votre système d'exploitation :
@@ -150,6 +152,48 @@ Dans ce cas, Docker attribuera un port disponible sur l'hôte, et vous pouvez d�
 
 Le mappage de port est essentiel pour exposer les services d'un conteneur à l'extérieur et permettre aux utilisateurs d'accéder à ces services depuis l'hôte ou d'autres machines dans le réseau, selon la configuration du réseau Docker.
 
+### Mappage des volumes
+
+Le mappage des volumes est une pratique essentielle dans Docker qui permet de persister les données générées par les conteneurs au-delà de leur cycle de vie. Lorsque vous exécutez un conteneur, ses données peuvent être stockées dans son système de fichiers interne. Cependant, une fois le conteneur arrêté ou supprimé, ces données peuvent être perdues. Le mappage de volumes résout ce problème en créant un lien entre un dossier sur l'hôte et un dossier à l'intérieur du conteneur.
+
+Par exemple, pour créer un volume nommé "mydata" et le monter dans le répertoire "/app" d'un conteneur, vous pouvez utiliser l'option `-v` lors de la création du conteneur :
+
+```bash
+docker run -v mydata:/app my-image
+```
+
+Cela assure la persistance des données du conteneur dans le volume "mydata" sur l'hôte, permettant ainsi de partager des données entre plusieurs conteneurs ou de sauvegarder ces données même si le conteneur est supprimé.
+
+Le mappage des volumes est particulièrement utile pour les applications nécessitant le stockage de données, comme les bases de données, les serveurs de fichiers, et autres. Il offre une flexibilité et une gestion facile des données dans le contexte des conteneurs Docker.
+
+Voici un exemple simple d'utilisation du mappage de volumes avec Docker Compose. Supposons que vous avez une application Node.js qui stocke des données dans un dossier `/app/data` et que vous souhaitez persister ces données en utilisant un volume.
+
+Créez un fichier `docker-compose.yml` avec le contenu suivant :
+
+```yaml
+version: '3'
+services:
+  webapp:
+    image: my-node-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - mydata:/app/data
+
+volumes:
+  mydata:
+```
+
+Dans cet exemple :
+
+- Le service `webapp` utilise l'image `my-node-app` (remplacez cela par l'image réelle de votre application Node.js).
+- Le mappage de port expose le port 3000 du conteneur vers le port 3000 de l'hôte.
+- La section `volumes` crée un volume nommé "mydata" et le monte dans le répertoire `/app/data` du conteneur.
+
+Lorsque vous lancez votre application avec `docker-compose up -d`, le volume "mydata" est créé, et les données générées par l'application dans le dossier `/app/data` du conteneur sont persistées sur l'hôte, dans le volume "mydata".
+
+Cette approche garantit que les données de votre application restent disponibles même si le conteneur est arrêté ou supprimé. Vous pouvez également partager ce volume entre plusieurs services dans le même `docker-compose.yml` ou même entre plusieurs applications s'exécutant sur la même machine.
+
 ### Lancement des containners
 
 Ouvrez un terminal dans le répertoire de votre application et exécutez la commande suivante pour construire et démarrer votre conteneur :
@@ -204,6 +248,8 @@ Voici quelques commandes de base indispensables à connaître pour travailler av
 
 Ces commandes constituent une base solide pour travailler avec Docker. N'oubliez pas de consulter la documentation officielle de Docker pour des informations plus détaillées sur chaque commande : [Documentation Docker](https://docs.docker.com/).
 
+![](../medias/cours/docker/docker-architecture.webp)
+
 ## Outil d'administration
 
 **Portainer** est une interface graphique open source pour la gestion des conteneurs Docker. Il fournit une interface utilisateur web intuitive pour visualiser, gérer et déployer des applications dans des conteneurs Docker. Voici quelques caractéristiques clés de Portainer :
@@ -234,3 +280,148 @@ Ces outils offrent des fonctionnalités similaires, mais la meilleure option dé
 
 **Docker Swarm** est un outil de gestion de cluster Docker intégré qui permet de créer et de gérer un ensemble de nœuds Docker, transformant ainsi plusieurs machines en un seul pool de ressources.
 Outre Docker Swarm, d'autres solutions de gestion de clusters Docker incluent **Kubernetes**, **Apache Mesos**, et **Amazon ECS**. Chacune de ces solutions a ses propres caractéristiques et avantages, et le choix dépend souvent des besoins spécifiques de votre environnement. Par exemple, Kubernetes est largement utilisé pour les déploiements à grande échelle, tandis que Docker Swarm offre une configuration plus simple pour les cas d'utilisation plus modestes.
+
+
+# Sécurité des Conteneurs Docker
+
+La sécurité des conteneurs Docker est une préoccupation essentielle pour garantir la protection des applications et des données qu'ils contiennent. Voici un aperçu des bonnes pratiques de sécurité associées aux conteneurs Docker :
+
+## 1. **Utiliser des Images Officielles et Vérifiées**
+
+Privilégiez l'utilisation d'images officielles provenant de dépôts de confiance tels que Docker Hub. Assurez-vous que les images utilisées sont régulièrement mises à jour et bénéficient du support de la communauté.
+
+## 2. **Mise à Jour Régulière des Images et des Conteneurs**
+
+Les mises à jour fréquentes des images et des conteneurs sont cruciales pour corriger les vulnérabilités de sécurité. Automatisez ce processus autant que possible pour maintenir votre environnement à jour.
+
+```bash
+docker pull <image>:<tag>
+docker-compose pull
+```
+
+## 3. **Utilisation de Non-root Users**
+
+Évitez d'utiliser l'utilisateur root dans les conteneurs. Définissez un utilisateur non-root pour minimiser les risques potentiels.
+
+```dockerfile
+FROM base-image
+USER nonrootuser
+```
+
+## 4. **Configuration Fine des Ressources**
+
+Limitez les ressources disponibles aux conteneurs avec `--memory`, `--cpu`, et d'autres options pour prévenir les attaques par déni de service.
+
+```bash
+docker run --memory=512m --cpu=0.5 my-image
+```
+
+## 5. **Isolation des Réseaux**
+
+Utilisez des réseaux Docker isolés pour empêcher les communications non autorisées entre conteneurs.
+
+```bash
+docker network create --driver bridge my-network
+docker run --network=my-network my-container
+```
+
+En suivant ces meilleures pratiques de sécurité, vous pouvez renforcer la résilience de vos conteneurs Docker et atténuer les risques potentiels. Il est important de rester informé sur les mises à jour de sécurité et d'appliquer régulièrement les correctifs nécessaires pour garantir un environnement Docker sûr et fiable.
+
+# Exemple de stack LAMP avec plusieurs containers (un peu obsolete aujourd'hui car repose sur une Debian 8)
+
+![](../medias/cours/docker/arborescence.PNG)
+
+```yaml
+version: '3'
+services:
+    m_apache:
+        build: docker/apache
+        container_name: m_apache
+        ports:
+          - 80:80
+        volumes:
+          - ./docker/config/vhosts:/etc/apache2/sites-enabled
+          - ./www:/var/www/html
+        depends_on:
+          - m_php
+
+    m_mysql:
+        image: mysql
+        command: "--default-authentication-plugin=mysql_native_password"
+        container_name: m_mysql
+        volumes:
+            - ./db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: mery
+            MYSQL_USER: mery
+            MYSQL_PASSWORD: mery
+
+    m_php:
+        build: docker/php
+        container_name: m_php
+        volumes:
+          - ./www:/var/www/html
+        depends_on:
+          - m_mysql
+
+    m_phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: m_phpmyadmin
+        environment:
+          PMA_HOST: m_mysql
+          PMA_PORT: 3306
+        ports:
+            - 8080:80
+        links:
+            - m_mysql
+```
+
+### fichier docker/php/Dockerfile
+```bash
+FROM php:7.2.10-fpm
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends vim curl debconf subversion git apt-transport-https apt-utils \
+    build-essential locales acl mailutils wget nodejs zip unzip \
+    gnupg gnupg1 gnupg2 \
+    zlib1g-dev \
+    sudo
+
+RUN docker-php-ext-install pdo pdo_mysql zip
+
+COPY php.ini /usr/local/etc/php/php.ini
+COPY php-fpm-pool.conf 	/usr/local/etc/php/pool.d/www.conf
+
+RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
+	mv composer.phar /usr/local/bin/composer
+
+RUN wget --no-check-certificate https://phar.phpunit.de/phpunit-6.5.3.phar && \
+    mv phpunit*.phar phpunit.phar && \
+    chmod +x phpunit.phar && \
+    mv phpunit.phar /usr/local/bin/phpunit
+
+RUN	echo "deb https://deb.nodesource.com/node_6.x jessie main" >> /etc/apt/sources.list.d/nodejs.list && \
+	wget -nv -O -  https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
+	echo "deb-src https://deb.nodesource.com/node_6.x jessie main" >> /etc/apt/sources.list.d/nodejs.list && \
+    apt-get update && \
+	apt-get install -y --force-yes nodejs && \
+	rm -f /etc/apt/sources.list.d/nodejs.list
+
+RUN groupadd dev -g 999
+RUN useradd dev -g dev -d /home/dev -m
+RUN passwd -d dev
+
+RUN rm -rf /var/lib/apt/lists/*
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
+    locale-gen
+
+RUN echo "dev ALL=(ALL) ALL" > /etc/sudoers
+
+WORKDIR /var/www/
+##</romaricp>##
+
+EXPOSE 9000
+CMD ["php-fpm"]
+```
