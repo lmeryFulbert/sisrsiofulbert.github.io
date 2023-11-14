@@ -143,3 +143,9 @@ La gestion du HTTPS avec Nginx implique la configuration d'un certificat SSL/TLS
 Maintenant, votre serveur Nginx devrait être configuré pour gérer les connexions HTTPS. Assurez-vous de remplacer les chemins des certificats (`ssl_certificate` et `ssl_certificate_key`) avec les chemins réels de vos certificats.
 
 N'oubliez pas de maintenir vos certificats SSL à jour. Vous pouvez configurer un renouvellement automatique avec Certbot en ajoutant une tâche planifiée (cron job).
+
+Dans le scénario de configuration qci dessus, les certificats SSL/TLS sont généralement nécessaires uniquement sur le serveur Nginx, qui agit en tant que reverse proxy. Les serveurs d'origine (Apache, serveurs Docker, etc.) ne nécessitent pas de certificats SSL/TLS propres, car la communication entre le serveur Nginx et les serveurs d'origine peut souvent se faire en interne via des connexions non chiffrées.
+
+Le trafic chiffré SSL/TLS entre les clients et Nginx s'arrête au niveau du serveur Nginx, et la communication entre Nginx et les serveurs d'origine peut être non chiffrée (HTTP) ou chiffrée séparément (par exemple, si les serveurs d'origine prennent en charge HTTPS et ont leurs propres certificats).
+
+Assurez-vous que le trafic entre Nginx et les serveurs d'origine est sécurisé en fonction de vos exigences de sécurité. Si nécessaire, vous pouvez activer HTTPS entre Nginx et les serveurs d'origine, mais cela impliquera la configuration de certificats sur ces serveurs d'origine également. Dans de nombreux cas, cette couche de chiffrement supplémentaire n'est pas nécessaire si le réseau interne est considéré comme sécurisé.
