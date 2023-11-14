@@ -100,3 +100,46 @@ sudo systemctl restart nginx
 Maintenant, Nginx agira en tant que reverse proxy et dirigera les requêtes en fonction des noms de domaine vers les serveurs appropriés.
 
 Assurez-vous de remplacer les valeurs comme `192.168.1.20`, `192.168.1.30`, `unport` par les valeurs spécifiques à votre configuration. Vous pouvez également personnaliser les options de proxy en fonction de vos besoins.
+
+## Gestion de TLS
+
+La gestion du HTTPS avec Nginx implique la configuration d'un certificat SSL/TLS pour sécuriser les connexions entre les clients et le serveur Nginx. Voici comment vous pouvez ajouter la prise en charge du HTTPS à votre configuration existante :
+
+2. **Modifiez la configuration Nginx :**
+   - Ajoutez les directives SSL dans chaque bloc `server` pour activer le support HTTPS.
+
+     ```nginx
+     server {
+         listen 80;
+         server_name site1.domaine.org;
+         return 301 https://$host$request_uri; // forcer la redirection en https
+     }
+
+     server {
+         listen 443 ssl;
+         server_name site1.domaine.org;
+
+         ssl_certificate /etc/ssl/certificat.pem;
+         ssl_certificate_key /etc/ssl/privkey.pem;
+
+         # ... autres directives SSL (comme ssl_protocols, ssl_ciphers, etc.)
+         
+         location / {
+             proxy_pass http://192.168.1.20;
+             include /etc/nginx/proxy_params;
+         }
+     }
+     ```
+
+     - Répétez le même processus pour les autres serveurs virtuels (`site2.domaine.org` et `site3.domaine.org`).
+
+3. **Redémarrez Nginx :**
+   - Une fois que vous avez configuré les certificats et ajusté la configuration Nginx, redémarrez Nginx pour appliquer les changements.
+
+     ```bash
+     sudo systemctl restart nginx
+     ```
+
+Maintenant, votre serveur Nginx devrait être configuré pour gérer les connexions HTTPS. Assurez-vous de remplacer les chemins des certificats (`ssl_certificate` et `ssl_certificate_key`) avec les chemins réels de vos certificats.
+
+N'oubliez pas de maintenir vos certificats SSL à jour. Vous pouvez configurer un renouvellement automatique avec Certbot en ajoutant une tâche planifiée (cron job).
