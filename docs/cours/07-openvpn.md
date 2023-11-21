@@ -23,7 +23,7 @@ Voici un schéma récapitulatif:
 Configuration du serveur VPN pour la communication du domicile jusqu’au faux internet utilisé par le contexte sportludique.fr
 
 De nombreux tutoriel détaillés pas à pas expliquent l'installation du serveur :
-https://kifarunix.com/step-by-step-guide-to-install-and-setup-openvpn-server-on-debian-12/?expand_article=1
+[exemple](https://kifarunix.com/step-by-step-guide-to-install-and-setup-openvpn-server-on-debian-12/?expand_article=1)){:target="_blank"}
 
 
 Et voici les fichiers de configurations adaptés:
