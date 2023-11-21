@@ -148,9 +148,9 @@ plugin /usr/lib/openvpn/openvpn-auth-ldap.so /etc/openvpn/auth/auth-ldap.conf
         # LDAP server URL
         URL             ldap://ipserveractivedirectory:389    # modify this lin! Replace X's with your Domain Controller's local IP address
 
-        BindDN          "CN=vpn,OU=profs,DC=lan,DC=sio,DC=lyceefulbert,DC=fr"    #modify this line to!
+        BindDN          "CN=****uservpn*****,OU=profs,DC=lan,DC=sio,DC=lyceefulbert,DC=fr"    #modify this line to!
 
-        Password        "**********"     # Enter the password of the user account that OpenVPN will use to talk to your domain controller
+        Password        "********************************"     # Enter the password of the user account that OpenVPN will use to talk to your domain controller
 
         Timeout         15
         TLSEnable       no
@@ -164,7 +164,7 @@ plugin /usr/lib/openvpn/openvpn-auth-ldap.so /etc/openvpn/auth/auth-ldap.conf
 
 	<Group>
 		BaseDN		"CN=Users,DC=lan,DC=sio,DC=lyceefulbert,DC=fr"
-		SearchFilter	"(CN=901_SISR)"
+		SearchFilter	"(CN=901_SISR)"     ##acces autorisés au seuls membre de ce groupe deuxieme année SISR)
 		MemberAttribute	"member"
 	</Group>
 
