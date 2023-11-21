@@ -6,11 +6,13 @@
 
 L’objectif est de permettre un accès aux étudiants de leur domicile à l’infrastructure qu’ils gèrent au lycée dans le contexte de leur PPE.
 
-Cet accès VPN utilisera une authentification des clients en se basant sur l’annuaire LDAP du domaine SIO.Fulbert géré via notre contrôleur de domaine avec l’Active Directory MS W2K8 R2.
+Cet accès VPN utilisera une authentification des clients en se basant sur l’annuaire LDAP du domaine **lan.sio.lyceefulbert.fr** géré via notre contrôleur de domaine avec l’Active Directory présent dans notre LAN.
 
-Cela permet d’éviter la génération d’autant de certificats qu’il y a d’utilisateurs potentiels du service. La solution de l’authentification basé sur le contrôleur de domaine permet d’utiliser le couple login/password habituellement utilisé.
+Cela permet d’éviter la génération d’autant de certificats qu’il y a d’utilisateurs potentiels du service. La solution de l’authentification basé sur le contrôleur de domaine permet d’utiliser le couple login/password habituellement utilisé pour ouvrir une session sur un poste de travail.
 
-L’outil utilisé est OpenVPN, mais le port d’écoute utilisé sera le 1195 en UDP (le 1194 est déjà utilisé sur le routeur publique pour la redirection vers le serveur VPN des enseignants)
+L’outil utilisé est OpenVPN installé sur le routeur de jonction entre le faux internet utilisé dans le laboratoire par les étudiants et le LAN du BTS SIO.
+
+Bien entendu le routeur fourni par notre opérateur est configuré pour rediriger les flux vers le serveur VPN correspondant via une règle de PAT.
 
 Voici un schéma récapitulatif:
 
@@ -35,7 +37,7 @@ Et voici les fichiers de configurations adaptés:
 local 172.16.200.1
 
 # Port d'écoute
-port 1195
+port 1194
 
 # TCP or UDP server?
 proto udp
