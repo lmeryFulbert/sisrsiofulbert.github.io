@@ -61,7 +61,7 @@ dh /etc/openvpn/easy-rsa/keys/dh2048.pem
 
 # Configure server mode and supply a VPN subnet
 # Définition de l'adresse de réseau virtuelle (du tunnel)
-server 172.31.0.0 255.255.255.0
+server 172.31.200.0 255.255.255.0
 
 # Maintain a record of client <-> virtual IP address
 # associations in this file.  If OpenVPN goes down or
