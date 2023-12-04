@@ -15,16 +15,16 @@ sudo apt-get install nginx
 
 ### Configuration de Nginx :
 
-1. Ouvrez le fichier de configuration principal de Nginx :
+1. Créer un fichier pour chaque site dans **/etc/nginx/sites-available** :
 
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo nano /etc/nginx/sites-available/site1
 ```
 
 2. Ajoutez une section pour chaque site, en remplaçant les valeurs par les vôtres :
 
 ```nginx
-http {
+
     server {
         listen 80;
         server_name site1.domaine.org;
@@ -37,7 +37,11 @@ http {
             proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
-
+```
+```bash
+sudo nano /etc/nginx/sites-available/site2
+```
+```nginx
     server {
         listen 80;
         server_name site2.domaine.org;
@@ -50,7 +54,9 @@ http {
             proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
-
+```
+etc...
+```nginx
     server {
         listen 80;
         server_name site3.domaine.org;
@@ -63,8 +69,21 @@ http {
             proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
-}
 ```
+
+Créer un lien symbolique pour chaque site référencé dans **sites-available** pour les activer dans **sites-enabled** 
+
+# Create symbolic links for all sites in sites-available
+sudo ln -s /etc/nginx/sites-available/site1 /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/site2 /etc/nginx/sites-enabled/
+# Repeat the above command for each site configuration file
+
+# Test Nginx configuration
+sudo nginx -t
+
+# If the configuration test is successful, reload Nginx
+sudo systemctl reload nginx
+
 
 Les directives `proxy_set_header` dans la configuration Nginx sont utilisées pour définir les en-têtes HTTP qui seront envoyés au serveur backend lorsqu'une requête est transmise par le reverse proxy. Ces en-têtes sont généralement utilisés pour transférer des informations sur la requête ou le client d'origine au serveur backend. Voici une explication des directives que vous trouverez dans l'exemple fourni :
 
