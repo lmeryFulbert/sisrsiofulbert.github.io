@@ -73,6 +73,7 @@ etc...
 
 Créer un lien symbolique pour chaque site référencé dans **sites-available** pour les activer dans **sites-enabled** 
 
+```bash
 # Create symbolic links for all sites in sites-available
 sudo ln -s /etc/nginx/sites-available/site1 /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/site2 /etc/nginx/sites-enabled/
@@ -83,7 +84,7 @@ sudo nginx -t
 
 # If the configuration test is successful, reload Nginx
 sudo systemctl reload nginx
-
+```
 
 Les directives `proxy_set_header` dans la configuration Nginx sont utilisées pour définir les en-têtes HTTP qui seront envoyés au serveur backend lorsqu'une requête est transmise par le reverse proxy. Ces en-têtes sont généralement utilisés pour transférer des informations sur la requête ou le client d'origine au serveur backend. Voici une explication des directives que vous trouverez dans l'exemple fourni :
 
