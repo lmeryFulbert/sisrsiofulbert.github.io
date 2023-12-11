@@ -208,7 +208,6 @@ Nagios est un puissant outil de supervision open source qui permet la surveillan
 
 La configuration des hôtes dans Nagios se fait généralement dans le fichier hosts.cfg. Voici un exemple :
 
-
 ```bash
 # Fichier : /etc/nagios/objects/hosts.cfg
 
