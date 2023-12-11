@@ -203,12 +203,13 @@ Device:
 IV. A. Supervision Active avec Nagios
 
 Nagios est un puissant outil de supervision open source qui permet la surveillance active des ressources réseau. Voici un exemple simplifié de configuration pour superviser un routeur et un commutateur avec Nagios :
+
 1. Configuration des Hôtes dans Nagios
 
 La configuration des hôtes dans Nagios se fait généralement dans le fichier hosts.cfg. Voici un exemple :
 
-cfg
 
+```bash
 # Fichier : /etc/nagios/objects/hosts.cfg
 
 define host {
@@ -224,14 +225,16 @@ define host {
     alias               Switch B - Description
     address             192.168.1.2
 }
+```
 
 Dans cet exemple, deux hôtes, "RouteurA" et "SwitchB", sont définis avec leurs adresses IP respectives.
+
 2. Configuration des Services dans Nagios
 
 La configuration des services spécifiques à surveiller se fait dans le fichier services.cfg. Voici un exemple :
 
-cfg
 
+```bash
 # Fichier : /etc/nagios/objects/services.cfg
 
 define service {
@@ -261,20 +264,22 @@ define service {
     service_description VLAN Status
     check_command       check_snmp!-C public -o dot1qVlanStatus.1
 }
+```
 
 Dans cet exemple, des services spécifiques tels que "CPU Usage" et "Memory Usage" pour le routeur, ainsi que "Port Status" et "VLAN Status" pour le commutateur, sont définis. Les commandes check_snmp permettent d'interroger les dispositifs via SNMP.
+
 3. Commandes personnalisées
 
 Nagios utilise des commandes pour effectuer des vérifications. Voici comment définir une commande pour interroger un dispositif via SNMP :
 
-cfg
-
+```bash
 # Fichier : /etc/nagios/objects/commands.cfg
 
 define command {
     command_name    check_snmp
     command_line    $USER1$/check_snmp -H $HOSTADDRESS$ $ARG1$
 }
+```
 
 4. Résultat
 
