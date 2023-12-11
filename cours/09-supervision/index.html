@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../08-messagerie/">
+      
+      
+        <link rel="next" href="../../infrastructure/01-introduction/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
+    
+    
+      
+        <title>09 - Supervision - SISR BTS SIO FULBERT</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.45e1311d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#09-supervision" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SISR BTS SIO FULBERT" class="md-header__button md-logo" aria-label="SISR BTS SIO FULBERT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SISR BTS SIO FULBERT
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              09 - Supervision
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SISR BTS SIO FULBERT" class="md-nav__button md-logo" aria-label="SISR BTS SIO FULBERT" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SISR BTS SIO FULBERT
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contexte
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contexte
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contexte/01-pr%C3%A9sentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contexte SportLudique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contexte/02_infrastructure-actuelle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure actuelle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contexte/03-Objectifs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objectifs à atteindre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-virtualisation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01-Virtualisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-dns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02-DNS (Domain Name System)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-nat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03-NAT Dynamique (Masquerade) version Cisco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-hsrp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04-FailOver avec le Protocole HSRP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-reverse-proxy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 - Reverse Proxy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-openvpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07 - OpenVPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-messagerie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08 - Messagerie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    09 - Supervision
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    09 - Supervision
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à la Supervision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à la Supervision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ii-a-definition-de-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. A. Définition de la Supervision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. A. Définition de la Supervision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-objectifs-de-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Objectifs de la Supervision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-composants-sous-surveillance" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Composants sous Surveillance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-methodes-de-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Méthodes de Supervision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocole-snmp-simple-network-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocole SNMP (Simple Network Management Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocole SNMP (Simple Network Management Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-generale-de-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation générale de SNMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation générale de SNMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction SNMP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iv-a-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. A. Supervision Active
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. A. Supervision Active">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-methodes-de-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Méthodes de Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-avantages-de-la-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Avantages de la Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-outils-de-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Outils de Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exemple-de-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exemple de Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-avec-nagios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple avec Nagios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervision Passive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supervision Passive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-traps-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Traps SNMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Traps SNMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-avantages-de-la-supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Avantages de la Supervision Passive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configuration-des-traps-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configuration des Traps SNMP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exemple-de-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exemple de Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-outils-de-supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Outils de Supervision Passive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/01-introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction sur l'infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/02-serveurs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Liste des serveurs et services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/03-infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/04-annexes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/05-fiche-recette/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiche de Recette
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Situations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Situations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../situations/01-deploiements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Situation 1 - Deploy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../situations/02-documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Situation 2 - Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../situations/03-infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Situation 3 - Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à la Supervision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à la Supervision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ii-a-definition-de-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      II. A. Définition de la Supervision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. A. Définition de la Supervision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-objectifs-de-la-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Objectifs de la Supervision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-composants-sous-surveillance" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Composants sous Surveillance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-methodes-de-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Méthodes de Supervision
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocole-snmp-simple-network-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocole SNMP (Simple Network Management Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocole SNMP (Simple Network Management Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-generale-de-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation générale de SNMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation générale de SNMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction SNMP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iv-a-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      IV. A. Supervision Active
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. A. Supervision Active">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-methodes-de-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Méthodes de Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-avantages-de-la-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Avantages de la Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-outils-de-supervision-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Outils de Supervision Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exemple-de-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exemple de Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-avec-nagios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple avec Nagios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervision Passive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supervision Passive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-traps-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Traps SNMP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Traps SNMP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-avantages-de-la-supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Avantages de la Supervision Passive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configuration-des-traps-snmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configuration des Traps SNMP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exemple-de-configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exemple de Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-outils-de-supervision-passive" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Outils de Supervision Passive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="09-supervision">09 - Supervision</h1>
+<h2 id="introduction-a-la-supervision">Introduction à la Supervision</h2>
+<p>A. Définition de la supervision</p>
+<h3 id="ii-a-definition-de-la-supervision">II. A. Définition de la Supervision</h3>
+<p>La supervision désigne l'ensemble des processus, outils et méthodes utilisés pour surveiller et contrôler les éléments d'un système informatique ou d'un réseau. Son objectif principal est d'assurer la disponibilité, la performance et la fiabilité des composants du système, tout en anticipant et en résolvant les éventuels problèmes.</p>
+<h4 id="1-objectifs-de-la-supervision">1. Objectifs de la Supervision</h4>
+<p>La supervision vise plusieurs objectifs essentiels dans la gestion d'un réseau ou d'un système informatique :</p>
+<ul>
+<li>
+<p><strong>Disponibilité :</strong> S'assurer que les services et les ressources sont accessibles lorsque nécessaire, minimisant ainsi les temps d'indisponibilité.</p>
+</li>
+<li>
+<p><strong>Performance :</strong> Mesurer et optimiser les performances des différents composants afin de garantir une utilisation efficiente des ressources.</p>
+</li>
+<li>
+<p><strong>Fiabilité :</strong> Prévenir les pannes et les dysfonctionnements, assurant ainsi une exploitation continue et fiable du système.</p>
+</li>
+<li>
+<p><strong>Sécurité :</strong> Identifier et réagir aux menaces potentielles, garantissant la sécurité des données et des communications.</p>
+</li>
+</ul>
+<h4 id="2-composants-sous-surveillance">2. Composants sous Surveillance</h4>
+<p>La supervision englobe la surveillance de divers composants, parmi lesquels :</p>
+<ul>
+<li>
+<p><strong>Matériel (Hardware) :</strong> Suivi des performances des serveurs, routeurs, commutateurs, et autres équipements.</p>
+</li>
+<li>
+<p><strong>Logiciel (Software) :</strong> Surveillance des applications, des bases de données, des systèmes d'exploitation pour détecter les erreurs et les défaillances.</p>
+</li>
+<li>
+<p><strong>Réseau :</strong> Contrôle du trafic, de la bande passante, de la latence, et gestion des éléments réseau pour garantir un flux de données optimal.</p>
+</li>
+<li>
+<p><strong>Sécurité :</strong> Détection des attaques, gestion des vulnérabilités, et contrôle des accès pour assurer la sécurité du système.</p>
+</li>
+</ul>
+<h4 id="3-methodes-de-supervision">3. Méthodes de Supervision</h4>
+<p>La supervision peut s'effectuer de manière proactive (supervision active) ou réactive (supervision passive). Les méthodes incluent la collecte de données, l'analyse des journaux, l'utilisation d'alertes, et la génération de rapports.</p>
+<p>La mise en place d'une stratégie de supervision efficace permet non seulement d'améliorer la réactivité face aux incidents, mais également d'anticiper les problèmes potentiels, réduisant ainsi les temps d'arrêt et les impacts sur les utilisateurs.</p>
+<h2 id="protocole-snmp-simple-network-management-protocol">Protocole SNMP (Simple Network Management Protocol)</h2>
+<h3 id="presentation-generale-de-snmp">Présentation générale de SNMP</h3>
+<p>Le <strong>Simple Network Management Protocol (SNMP)</strong> est un protocole <strong>(UDP 161)</strong> standard de gestion de réseau largement utilisé pour la supervision et la gestion des équipements réseau et des systèmes informatiques. Conçu pour être simple et efficace, SNMP permet la collecte d'informations et le contrôle d'appareils réseau, facilitant ainsi la surveillance proactive et la résolution des problèmes.</p>
+<ol>
+<li>Architecture SNMP</li>
+</ol>
+<p><strong>Agents SNMP :</strong> Les agents SNMP sont des logiciels intégrés dans les équipements réseau (comme les routeurs, les commutateurs, les serveurs) chargés de collecter des informations sur les performances et l'état des dispositifs. Ces agents répondent aux requêtes SNMP et génèrent des "traps" en cas d'événements particuliers. Ils écoutent sur le port UDP 161 (ils s'agit donc d'un processus serveur).</p>
+<p><strong>Gestionnaire SNMP :</strong> Le gestionnaire SNMP est une application logicielle qui effectue des requêtes aux agents SNMP pour obtenir des informations sur les appareils supervisés. Il peut également envoyer des commandes pour configurer ou contrôler les dispositifs.
+On le considère au niveau des flux comme le client.
+Toutefois comme il centralise les réponses SNMP, on le considère comme le serveur de supervision.</p>
+<ol>
+<li>Fonctionnement de SNMP</li>
+</ol>
+<p>SNMP fonctionne sur la base d'un échange de messages entre le gestionnaire et les agents. Les messages SNMP, appelés Protocol Data Units (PDU), sont utilisés pour lire ou écrire des informations sur les appareils.</p>
+<p>Les trois versions principales de SNMP sont :</p>
+<p><strong>SNMPv1 :</strong> La première version, offrant des fonctionnalités de base pour la surveillance. Elle utilise des communautés pour l'authentification.</p>
+<p><strong>SNMPv2 :</strong> Une version améliorée, introduisant des fonctionnalités telles que la capacité de définir des groupes de variables et des améliorations dans la gestion des erreurs.</p>
+<p><strong>SNMPv3 :</strong> La version la plus récente, intégrant des fonctionnalités de sécurité robustes, y compris l'authentification et le chiffrement, assurant ainsi une communication sécurisée entre les gestionnaires et les agents.</p>
+<ol>
+<li>Avantages et Limitations de SNMP</li>
+</ol>
+<p><strong>Avantages :</strong></p>
+<ul>
+<li>
+<p>Universalité : SNMP est largement adopté, offrant une compatibilité étendue avec une variété d'équipements réseau et de systèmes.</p>
+</li>
+<li>
+<p>Simplicité : La simplicité de la conception de SNMP facilite son déploiement et son utilisation.</p>
+</li>
+<li>
+<p>Extensibilité : Il est possible d'étendre SNMP pour prendre en charge de nouveaux types d'équipements ou de variables grâce aux MIBs (Management Information Base).</p>
+</li>
+</ul>
+<p><strong>Limitations :</strong></p>
+<p>Sécurité : Les versions plus anciennes de SNMP (v1 et v2) manquent de fonctionnalités de sécurité robustes. Cependant, SNMPv3 a remédié à ces lacunes en introduisant des mécanismes de sécurité plus avancés.</p>
+<p>Complexité des MIBs : Les MIBs peuvent parfois être complexes, surtout dans les réseaux complexes, nécessitant une compréhension approfondie pour une configuration efficace</p>
+<p>B. Structure de la MIB</p>
+<p>La <strong>MIB (Management Information Base)</strong> est une structure hiérarchique qui organise les informations accessibles via SNMP. Elle est composée d'objets qui représentent des éléments spécifiques des équipements surveillés. Chaque objet a un identifiant unique appelé OID (Object Identifier). La MIB définit les variables que les gestionnaires peuvent interroger et modifier.</p>
+<p>La MIB est organisée en différents groupes, chacun regroupant des objets liés à une fonction ou une caractéristique spécifique. Par exemple, la MIB-II est une partie standard de la MIB qui inclut des informations générales sur le système, l'interface réseau, et d'autres aspects communs.</p>
+<p>Voici un exemple simplifié d'une partie de la MIB-II, qui est une MIB standard souvent utilisée pour superviser des appareils réseau. La MIB-II comprend plusieurs groupes, et nous allons explorer le groupe "System" pour illustrer quelques-uns de ses objets.</p>
+<p>Groupe System de la MIB-II :</p>
+<pre><code>sysDescr (1.3.6.1.2.1.1.1):
+    Type : Chaîne de caractères
+    Description : Une description du système, généralement fournie par le fabricant.
+
+sysObjectID (1.3.6.1.2.1.1.2):
+    Type : Object Identifier
+    Description : L'OID identifiant le type de système, permettant de déterminer le type d'équipement.
+
+sysUpTime (1.3.6.1.2.1.1.3):
+    Type : Temps depuis le dernier redémarrage (en centièmes de secondes)
+    Description : Temps écoulé depuis le dernier redémarrage du système.
+
+sysContact (1.3.6.1.2.1.1.4):
+    Type : Chaîne de caractères
+    Description : Information de contact pour l'administrateur du système.
+
+sysName (1.3.6.1.2.1.1.5):
+    Type : Chaîne de caractères
+    Description : Le nom de l'équipement.
+
+sysLocation (1.3.6.1.2.1.1.6):
+    Type : Chaîne de caractères
+    Description : L'emplacement physique du système.
+
+sysServices (1.3.6.1.2.1.1.7):
+    Type : Entier
+    Description : Indique quels services sont disponibles sur le système.
+</code></pre>
+<p>Chaque objet de la MIB est accessible via un identifiant unique (OID), et le gestionnaire SNMP peut interroger ces objets pour obtenir des informations sur le système. Par exemple, en interrogeant sysDescr, le gestionnaire pourrait recevoir une réponse avec une description détaillée du système.</p>
+<h4 id="interaction-snmp">Interaction SNMP</h4>
+<p>L'interaction entre le gestionnaire et l'agent s'effectue à travers des PDUs (Protocol Data Units) On peux utiliser snmpwalk sous linux pour tester le protocole snmp:</p>
+<p><strong>Get Request :</strong> Le gestionnaire envoie une requête demandant la valeur d'un objet spécifique dans la MIB de l'agent.</p>
+<p><strong>Get Response :</strong> L'agent répond avec la valeur de l'objet demandé.</p>
+<p><strong>Set Request :</strong> Le gestionnaire envoie une requête pour modifier la valeur d'un objet dans la MIB de l'agent.</p>
+<p><strong>Trap :</strong> L'agent peut également envoyer un "trap" (UDP 162) au gestionnaire pour signaler un événement, sans attendre une requête spécifique</p>
+<p>IV. Supervision Active et Passive</p>
+<p>A. Supervision Active</p>
+<h3 id="iv-a-supervision-active">IV. A. Supervision Active</h3>
+<p>La supervision active, également appelée monitoring actif, désigne une approche proactive dans laquelle le gestionnaire réseau génère délibérément des requêtes pour obtenir des informations sur les dispositifs surveillés. Cette méthode permet de mesurer en temps réel la performance, la disponibilité et d'autres paramètres clés des composants réseau. Voici une exploration plus approfondie de la supervision active :</p>
+<h4 id="1-methodes-de-supervision-active">1. Méthodes de Supervision Active</h4>
+<p>La supervision active implique l'utilisation de différentes méthodes pour interroger les équipements réseau et collecter des données. Parmi les méthodes couramment utilisées, on trouve :</p>
+<ul>
+<li>
+<p><strong>Ping (ICMP Echo) :</strong> Envoi de paquets ICMP Echo Request aux appareils réseau pour vérifier leur disponibilité et mesurer les temps de réponse.</p>
+</li>
+<li>
+<p><strong>SNMP Polling :</strong> Interrogation régulière des agents SNMP pour récupérer des informations sur les performances, la charge CPU, la mémoire, et d'autres paramètres.</p>
+</li>
+<li>
+<p><strong>Tests de bande passante :</strong> Envoi de flux de données pour évaluer la bande passante disponible et détecter les goulots d'étranglement.</p>
+</li>
+<li>
+<p><strong>Test de connectivité :</strong> Vérification de la connectivité entre les différents nœuds du réseau pour identifier les éventuels problèmes de routage.</p>
+</li>
+</ul>
+<h4 id="2-avantages-de-la-supervision-active">2. Avantages de la Supervision Active</h4>
+<ul>
+<li>
+<p><strong>Réactivité :</strong> La supervision active permet une détection rapide des problèmes. Les gestionnaires peuvent recevoir des alertes immédiates lorsqu'une défaillance ou un problème de performance est détecté.</p>
+</li>
+<li>
+<p><strong>Collecte de données en temps réel :</strong> Les mesures sont effectuées en temps réel, offrant une vue instantanée de l'état du réseau.</p>
+</li>
+<li>
+<p><strong>Analyse proactive :</strong> L'analyse des tendances à partir des données collectées permet d'anticiper les problèmes potentiels et de prendre des mesures préventives.</p>
+</li>
+<li>
+<p><strong>Contrôle ciblé :</strong> Les gestionnaires peuvent cibler spécifiquement des dispositifs, des interfaces ou des services pour une supervision plus précise.</p>
+</li>
+</ul>
+<h4 id="3-outils-de-supervision-active">3. Outils de Supervision Active</h4>
+<p>Plusieurs outils de supervision active sont disponibles pour mettre en œuvre cette approche. Certains des outils les plus couramment utilisés incluent :</p>
+<ul>
+<li>
+<p><strong>Nagios :</strong> Utilisé pour surveiller la disponibilité, les ressources système, et les services.</p>
+</li>
+<li>
+<p><strong>PRTG :</strong> Permet la surveillance en temps réel de la bande passante, des serveurs, des applications, etc.</p>
+</li>
+<li>
+<p><strong>Zabbix :</strong> Offre une supervision complète avec la possibilité de configurer des déclencheurs et des alertes.</p>
+</li>
+<li>
+<p><strong>Wireshark :</strong> Un outil d'analyse réseau qui peut être utilisé pour examiner le trafic en temps réel et diagnostiquer des problèmes.</p>
+</li>
+</ul>
+<h4 id="4-exemple-de-configuration">4. Exemple de Configuration</h4>
+<p>Un exemple simple de configuration de supervision active pourrait être la mise en place d'une sonde SNMP pour interroger périodiquement les dispositifs réseau et collecter des données sur la charge CPU, l'utilisation de la mémoire, et le trafic réseau.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Device</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RouteurA</span>
+<span class="w">    </span><span class="nt">IP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.1</span>
+<span class="w">    </span><span class="nt">SNMP</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Community</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
+<span class="w">      </span><span class="nt">Metrics</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CPUUsage</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MemoryUsage</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkTraffic</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchB</span>
+<span class="w">    </span><span class="nt">IP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.1.2</span>
+<span class="w">    </span><span class="nt">SNMP</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Community</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
+<span class="w">      </span><span class="nt">Metrics</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PortStatus</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VLANStatus</span>
+</code></pre></div>
+<h2 id="exemple-avec-nagios">Exemple avec Nagios</h2>
+<p>IV. A. Supervision Active avec Nagios</p>
+<p>Nagios est un puissant outil de supervision open source qui permet la surveillance active des ressources réseau. Voici un exemple simplifié de configuration pour superviser un routeur et un commutateur avec Nagios :</p>
+<ol>
+<li>Configuration des Hôtes dans Nagios</li>
+</ol>
+<p>La configuration des hôtes dans Nagios se fait généralement dans le fichier hosts.cfg. Voici un exemple :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fichier : /etc/nagios/objects/hosts.cfg</span>
+
+define<span class="w"> </span>host<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-host
+<span class="w">    </span>host_name<span class="w">           </span>RouteurA
+<span class="w">    </span><span class="nb">alias</span><span class="w">               </span>Routeur<span class="w"> </span>A<span class="w"> </span>-<span class="w"> </span>Description
+<span class="w">    </span>address<span class="w">             </span><span class="m">192</span>.168.1.1
+<span class="o">}</span>
+
+define<span class="w"> </span>host<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-host
+<span class="w">    </span>host_name<span class="w">           </span>SwitchB
+<span class="w">    </span><span class="nb">alias</span><span class="w">               </span>Switch<span class="w"> </span>B<span class="w"> </span>-<span class="w"> </span>Description
+<span class="w">    </span>address<span class="w">             </span><span class="m">192</span>.168.1.2
+<span class="o">}</span>
+</code></pre></div>
+<p>Dans cet exemple, deux hôtes, "RouteurA" et "SwitchB", sont définis avec leurs adresses IP respectives.</p>
+<ol>
+<li>Configuration des Services dans Nagios</li>
+</ol>
+<p>La configuration des services spécifiques à surveiller se fait dans le fichier services.cfg. Voici un exemple :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fichier : /etc/nagios/objects/services.cfg</span>
+
+define<span class="w"> </span>service<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-service
+<span class="w">    </span>host_name<span class="w">           </span>RouteurA
+<span class="w">    </span>service_description<span class="w"> </span>CPU<span class="w"> </span>Usage
+<span class="w">    </span>check_command<span class="w">       </span>check_snmp!-C<span class="w"> </span>public<span class="w"> </span>-o<span class="w"> </span>hrProcessorLoad.1<span class="w"> </span>-w<span class="w"> </span><span class="m">80</span><span class="w"> </span>-c<span class="w"> </span><span class="m">90</span>
+<span class="o">}</span>
+
+define<span class="w"> </span>service<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-service
+<span class="w">    </span>host_name<span class="w">           </span>RouteurA
+<span class="w">    </span>service_description<span class="w"> </span>Memory<span class="w"> </span>Usage
+<span class="w">    </span>check_command<span class="w">       </span>check_snmp!-C<span class="w"> </span>public<span class="w"> </span>-o<span class="w"> </span>hrStorageUsed.1<span class="w"> </span>-w<span class="w"> </span><span class="m">80</span>%<span class="w"> </span>-c<span class="w"> </span><span class="m">90</span>%
+<span class="o">}</span>
+
+define<span class="w"> </span>service<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-service
+<span class="w">    </span>host_name<span class="w">           </span>SwitchB
+<span class="w">    </span>service_description<span class="w"> </span>Port<span class="w"> </span>Status
+<span class="w">    </span>check_command<span class="w">       </span>check_snmp!-C<span class="w"> </span>public<span class="w"> </span>-o<span class="w"> </span>ifOperStatus.1
+<span class="o">}</span>
+
+define<span class="w"> </span>service<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>use<span class="w">                 </span>generic-service
+<span class="w">    </span>host_name<span class="w">           </span>SwitchB
+<span class="w">    </span>service_description<span class="w"> </span>VLAN<span class="w"> </span>Status
+<span class="w">    </span>check_command<span class="w">       </span>check_snmp!-C<span class="w"> </span>public<span class="w"> </span>-o<span class="w"> </span>dot1qVlanStatus.1
+<span class="o">}</span>
+</code></pre></div>
+<p>Dans cet exemple, des services spécifiques tels que "CPU Usage" et "Memory Usage" pour le routeur, ainsi que "Port Status" et "VLAN Status" pour le commutateur, sont définis. Les commandes check_snmp permettent d'interroger les dispositifs via SNMP.</p>
+<ol>
+<li>Commandes personnalisées</li>
+</ol>
+<p>Nagios utilise des commandes pour effectuer des vérifications. Voici comment définir une commande pour interroger un dispositif via SNMP :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fichier : /etc/nagios/objects/commands.cfg</span>
+
+define<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>command_name<span class="w">    </span>check_snmp
+<span class="w">    </span>command_line<span class="w">    </span><span class="nv">$USER1</span>$/check_snmp<span class="w"> </span>-H<span class="w"> </span><span class="nv">$HOSTADDRESS</span>$<span class="w"> </span><span class="nv">$ARG1</span>$
+<span class="o">}</span>
+</code></pre></div>
+<ol>
+<li>Résultat</li>
+</ol>
+<p>Une fois que Nagios est configuré avec ces informations, il surveillera activement les services spécifiés et générera des alertes en cas de problème. Les seuils de déclenchement d'alertes (warning et critical) peuvent être ajustés en fonction des besoins spécifiques.</p>
+<h2 id="supervision-passive">Supervision Passive</h2>
+<p>La supervision passive, également connue sous le nom de monitoring passif, est une approche où les dispositifs réseau envoient activement des informations à un serveur de supervision sans qu'il ait à les interroger. Cela est généralement réalisé à l'aide de Traps SNMP. La supervision passive offre une visibilité en temps réel des événements sur le réseau sans avoir à effectuer des requêtes constantes. Voici un aperçu détaillé de la supervision passive :</p>
+<h3 id="1-traps-snmp">1. Traps SNMP</h3>
+<ul>
+<li>
+<p><strong>Définition :</strong> Un Trap SNMP est une notification instantanée qu'un agent SNMP envoie à un gestionnaire SNMP lorsqu'un événement prédéfini se produit. Les Traps peuvent signaler diverses conditions, telles que des pannes, des changements d'état, ou d'autres événements spécifiques.</p>
+</li>
+<li>
+<p><strong>Fonctionnement :</strong> Lorsqu'un événement survient, l'agent SNMP génère un Trap et l'envoie au gestionnaire SNMP. Le gestionnaire réagit en conséquence, pouvant déclencher des alertes, des scripts, ou d'autres actions définies.</p>
+</li>
+</ul>
+<h4 id="2-avantages-de-la-supervision-passive">2. Avantages de la Supervision Passive</h4>
+<ul>
+<li>
+<p><strong>Réactivité accrue :</strong> Les Traps permettent une détection instantanée des événements, fournissant une réactivité accrue aux changements dans le réseau.</p>
+</li>
+<li>
+<p><strong>Réduction du trafic réseau :</strong> Par rapport à la supervision active, la supervision passive génère moins de trafic réseau car les informations sont transmises uniquement lorsque des événements surviennent.</p>
+</li>
+<li>
+<p><strong>Visibilité en temps réel :</strong> La supervision passive offre une visibilité immédiate sur les événements critiques, ce qui peut être crucial pour la résolution rapide des problèmes.</p>
+</li>
+</ul>
+<h4 id="3-configuration-des-traps-snmp">3. Configuration des Traps SNMP</h4>
+<ul>
+<li>
+<p><strong>Au niveau de l'Agent SNMP :</strong> La configuration des Traps SNMP se fait au niveau de l'agent SNMP sur chaque dispositif. Les événements spécifiques qui déclenchent l'envoi d'un Trap sont définis dans la configuration de l'agent.</p>
+</li>
+<li>
+<p><strong>Au niveau du Gestionnaire SNMP :</strong> Le gestionnaire SNMP doit être configuré pour recevoir et interpréter les Traps. Cela implique la définition des actions à entreprendre lorsqu'un Trap spécifique est reçu.</p>
+</li>
+</ul>
+<h4 id="4-exemple-de-configuration_1">4. Exemple de Configuration</h4>
+<ul>
+<li><strong>Configuration de l'Agent SNMP :</strong> </li>
+</ul>
+<p>Dans la configuration de l'agent sur un routeur, vous pourriez spécifier qu'un Trap doit être généré en cas de changement d'état d'une interface réseau.</p>
+<div class="highlight"><pre><span></span><code>snmp-server<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>traps
+snmp-server<span class="w"> </span>host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>public<span class="w"> </span>SNMP-TRAP
+</code></pre></div>
+<p>Dans cet exemple, le routeur envoie des Traps à l'adresse IP 192.168.1.100 avec la communauté SNMP "public" lorsqu'un événement défini survient.</p>
+<ul>
+<li><strong>Configuration du Gestionnaire SNMP :</strong></li>
+</ul>
+<p>Dans le gestionnaire SNMP (par exemple, avec un outil comme Nagios ou Centreon), vous devez configurer la réception des Traps SNMP et définir des règles pour gérer ces événements.</p>
+<h4 id="5-outils-de-supervision-passive">5. Outils de Supervision Passive</h4>
+<p>Plusieurs outils de supervision passifs sont disponibles, certains construits au-dessus de protocoles comme SNMP, et d'autres utilisant des mécanismes spécifiques aux fournisseurs. Certains exemples incluent :</p>
+<ul>
+<li>
+<p><strong>Nagios :</strong> Peut être configuré pour recevoir et traiter des Traps SNMP.</p>
+</li>
+<li>
+<p><strong>Centreon :</strong> Offre la gestion des Traps SNMP et une interface graphique conviviale pour définir des actions en réponse à des événements.</p>
+</li>
+<li>
+<p><strong>Zabbix :</strong> Supporte la réception et le traitement des Traps SNMP.</p>
+</li>
+</ul>
+<p>La supervision passive, avec l'utilisation judicieuse des Traps SNMP, offre une approche puissante pour la détection et la gestion rapides des événements dans un réseau, permettant ainsi une résolution proactive des problèmes.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
