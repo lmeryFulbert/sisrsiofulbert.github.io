@@ -122,23 +122,23 @@ En résumé, l'accès aux boîtes aux lettres en France est soumis à un cadre j
 
 ### Sous Windows
 
-Microsoft Exchange
-hmailserver
+- Microsoft Exchange
+- hmailserver
 
 ### Sous Linux
 
-Postfix (smtp)
-Dovecot (imap)
+- Postfix (smtp)
+- Dovecot (imap)
 
 ### Solution complètes (agenda, contacts etc..)
 
-Microsoft Exchange
-Zimbra
-IBM Notes (Lotus Notes)
+- Microsoft Exchange
+- Zimbra
+- IBM Notes (Lotus Notes)
 
 ## Clients de messagerie
 
-Microsoft Outlook
-Mozilla Thunderbird
-Apple Mail
-Evolution (Linux)
+- Microsoft Outlook
+- Mozilla Thunderbird
+- Apple Mail
+- Evolution (Linux)
