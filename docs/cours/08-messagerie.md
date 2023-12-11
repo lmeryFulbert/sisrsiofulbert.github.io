@@ -66,11 +66,11 @@ Le positionnement du serveur de messagerie au sein d'une zone réseau protégée
 
 ### Pare-feu :
 
-    Un pare-feu est déployé pour surveiller et filtrer le trafic entrant et sortant du serveur de messagerie. Cela aide à prévenir les attaques malveillantes, telles que les tentatives d'intrusion ou les attaques par déni de service.
+Un pare-feu est déployé pour surveiller et filtrer le trafic entrant et sortant du serveur de messagerie. Cela aide à prévenir les attaques malveillantes, telles que les tentatives d'intrusion ou les attaques par déni de service.
 
 ### Détection d'Intrusion :
 
-    Les systèmes de détection d'intrusion sont mis en place pour détecter les activités suspectes ou malveillantes. Cela inclut la surveillance des journaux d'événements, l'analyse du trafic réseau, et l'identification des tentatives d'accès non autorisées.
+Les systèmes de détection d'intrusion sont mis en place pour détecter les activités suspectes ou malveillantes. Cela inclut la surveillance des journaux d'événements, l'analyse du trafic réseau, et l'identification des tentatives d'accès non autorisées.
 
 ### Stockage des Boîtes aux Lettres sur un Serveur de Base de Données Sécurisé :
 
@@ -78,15 +78,15 @@ Le stockage des boîtes aux lettres sur un serveur de base de données sécuris�
 
 #### Chiffrement des Données :
 
-    Les données des boîtes aux lettres peuvent être chiffrées pour garantir que même en cas d'accès non autorisé, les informations restent illisibles sans la clé de chiffrement appropriée.
+Les données des boîtes aux lettres peuvent être chiffrées pour garantir que même en cas d'accès non autorisé, les informations restent illisibles sans la clé de chiffrement appropriée.
 
-    Gestion Centralisée :
+**Gestion Centralisée :**
 
-    La centralisation des données sur un serveur de base de données facilite la gestion des boîtes aux lettres, les sauvegardes régulières, et la mise en œuvre de politiques de sécurité cohérentes.
+La centralisation des données sur un serveur de base de données facilite la gestion des boîtes aux lettres, les sauvegardes régulières, et la mise en œuvre de politiques de sécurité cohérentes.
 
-    Contrôle d'Accès :
+**Contrôle d'Accès :**
 
-    Des mécanismes de contrôle d'accès stricts peuvent être appliqués pour garantir que seules les personnes autorisées ont accès aux données sensibles des boîtes aux lettres.
+Des mécanismes de contrôle d'accès stricts peuvent être appliqués pour garantir que seules les personnes autorisées ont accès aux données sensibles des boîtes aux lettres.
 
 En intégrant ces pratiques dans l'infrastructure, le serveur de messagerie peut opérer de manière sécurisée, réduisant les risques potentiels liés à la confidentialité et à l'intégrité des données.
 
